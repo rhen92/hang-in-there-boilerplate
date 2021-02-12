@@ -121,6 +121,10 @@ makePosterButton.addEventListener('click', function() {
   hideMainForm(makePosterForm);
 });
 
+nevermindButton.addEventListener('click', function() {
+  hideSideForm(makePosterForm);
+});
+
 
 
 
