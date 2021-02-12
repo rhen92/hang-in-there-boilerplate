@@ -9,6 +9,8 @@ var accessForm = document.querySelector('form');
 var mainPage = document.querySelector('.main-poster');
 var nevermindButton = document.querySelector('.show-main');
 var showSavePosterButton = document.querySelector('.show-saved');
+var showSavedForm = document.querySelector('.saved-posters');
+var backToMainButton = document.querySelector('.back-to-main');
 
 
 // we've provided you with some data to work with 👇
