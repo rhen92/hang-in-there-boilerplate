@@ -4,9 +4,12 @@ var randomButton = document.querySelector('.show-random');
 var quotation = document.querySelector('h3');
 var image = document.querySelector('img');
 var makePosterButton = document.querySelector('.show-form');
-var hidePoster = document.querySelector('.poster-form')
+var hidePoster = document.querySelector('.poster-form');
 var accessForm = document.querySelector('form');
-var mainPage = document.querySelector('.main-poster')
+var mainPage = document.querySelector('.main-poster');
+var nevermindButton = document.querySelector('.show-main');
+var showSavePosterButton = document.querySelector('.show-saved');
+
 
 // we've provided you with some data to work with 👇
 var images = [
@@ -120,13 +123,6 @@ makePosterButton.addEventListener('click', hiddenForm);
 
 
 // functions and event handlers go here 👇
-// function randomTitle() {
-//   titleName.innerText = titles[Math.floor(Math.random() * titles.length)];
-// }
-//
-// function randomQuotes() {
-//   quotation.innerText = quotes[Math.floor(Math.random() * quotes.length)];
-// }
 
 function randomPoster() {
   image.src = images[Math.floor(Math.random() * images.length)];
@@ -134,12 +130,11 @@ function randomPoster() {
   titleName.innerText = titles[Math.floor(Math.random() * titles.length)];
 }
 
-
-
 function hiddenForm(){
   accessForm.classList.toggle('hidden');
   hidePoster.classList.toggle('hidden');
 }
+
 
 
 
