@@ -115,27 +115,19 @@ var savedPosters = [];
 var currentPoster;
 
 // event listeners go here 👇
-// randomButton.addEventListener('click', randomTitle);
-// randomButton.addEventListener('click', randomQuotes);
 randomButton.addEventListener('click', randomPoster);
 
-makePosterButton.addEventListener('click', hiddenForm);
 
 
 
 
 // functions and event handlers go here 👇
-
 function randomPoster() {
   image.src = images[Math.floor(Math.random() * images.length)];
   quotation.innerText = quotes[Math.floor(Math.random() * quotes.length)];
   titleName.innerText = titles[Math.floor(Math.random() * titles.length)];
 }
 
-function hiddenForm(){
-  accessForm.classList.toggle('hidden');
-  hidePoster.classList.toggle('hidden');
-}
 
 
 
