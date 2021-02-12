@@ -117,6 +117,10 @@ var currentPoster;
 // event listeners go here 👇
 randomButton.addEventListener('click', randomPoster);
 
+makePosterButton.addEventListener('click', function() {
+  hideMainForm(makePosterForm);
+});
+
 
 
 
