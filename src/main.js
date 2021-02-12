@@ -129,6 +129,10 @@ showSavePosterButton.addEventListener('click', function() {
   hideMainForm(showSavedForm);
 });
 
+backToMainButton.addEventListener('click', function() {
+  hideSideForm(showSavedForm);
+})
+
 
 
 
