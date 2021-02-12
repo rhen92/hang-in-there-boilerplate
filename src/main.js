@@ -12,7 +12,6 @@ var showSavePosterButton = document.querySelector('.show-saved');
 var showSavedForm = document.querySelector('.saved-posters');
 var backToMainButton = document.querySelector('.back-to-main');
 
-
 // we've provided you with some data to work with 👇
 var images = [
   "./assets/bees.jpg",
@@ -133,10 +132,6 @@ backToMainButton.addEventListener('click', function() {
   hideSideForm(showSavedForm);
 })
 
-
-
-
-
 // functions and event handlers go here 👇
 function randomPoster() {
   image.src = images[Math.floor(Math.random() * images.length)];
@@ -144,11 +139,15 @@ function randomPoster() {
   titleName.innerText = titles[Math.floor(Math.random() * titles.length)];
 }
 
+function hideMainForm(page) {
+  page.classList.remove('hidden');
+  mainPage.classList.add('hidden');
+  }
 
-
-
-
-
+function hideSideForm(page) {
+  mainPage.classList.remove('hidden');
+  page.classList.add('hidden');
+  }
 
 // (we've provided one for you to get you started)!
 function getRandomIndex(array) {
