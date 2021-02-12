@@ -3,6 +3,11 @@ var titleName = document.querySelector('h1');
 var randomButton = document.querySelector('.show-random');
 var quotation = document.querySelector('h3');
 var image = document.querySelector('img');
+var makePosterButton = document.querySelector('.show-form');
+var hidePoster = document.querySelector('.poster-form')
+var accessForm = document.querySelector('form');
+var mainPage = document.querySelector('.main-poster')
+
 // we've provided you with some data to work with 👇
 var images = [
   "./assets/bees.jpg",
@@ -105,22 +110,40 @@ var savedPosters = [];
 var currentPoster;
 
 // event listeners go here 👇
-randomButton.addEventListener('click', randomTitle);
-randomButton.addEventListener('click', randomQuotes);
+// randomButton.addEventListener('click', randomTitle);
+// randomButton.addEventListener('click', randomQuotes);
 randomButton.addEventListener('click', randomPoster);
 
-// functions and event handlers go here 👇
-function randomTitle() {
-  return titleName.innerText = titles[Math.floor(Math.random() * titles.length)];
-}
+makePosterButton.addEventListener('click', hiddenForm);
 
-function randomQuotes() {
-  return quotation.innerText = quotes[Math.floor(Math.random() * quotes.length)];
-}
+
+
+
+// functions and event handlers go here 👇
+// function randomTitle() {
+//   titleName.innerText = titles[Math.floor(Math.random() * titles.length)];
+// }
+//
+// function randomQuotes() {
+//   quotation.innerText = quotes[Math.floor(Math.random() * quotes.length)];
+// }
 
 function randomPoster() {
-  return image.src = images[Math.floor(Math.random() * images.length)];
+  image.src = images[Math.floor(Math.random() * images.length)];
+  quotation.innerText = quotes[Math.floor(Math.random() * quotes.length)];
+  titleName.innerText = titles[Math.floor(Math.random() * titles.length)];
 }
+
+
+
+function hiddenForm(){
+  accessForm.classList.toggle('hidden');
+  hidePoster.classList.toggle('hidden');
+}
+
+
+
+
 
 // (we've provided one for you to get you started)!
 function getRandomIndex(array) {
