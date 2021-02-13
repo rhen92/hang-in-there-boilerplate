@@ -12,6 +12,7 @@ var showSavePosterButton = document.querySelector('.show-saved');
 var showSavedForm = document.querySelector('.saved-posters');
 var backToMainButton = document.querySelector('.back-to-main');
 var showMyPosterButton = document.querySelector('.make-poster');
+var imageURLText = document.querySelector('#poster-image-url');
 
 // we've provided you with some data to work with 👇
 var images = [
