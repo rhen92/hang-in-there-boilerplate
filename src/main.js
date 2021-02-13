@@ -14,6 +14,7 @@ var backToMainButton = document.querySelector('.back-to-main');
 var showMyPosterButton = document.querySelector('.make-poster');
 var imageURLText = document.querySelector('#poster-image-url');
 var titleText = document.querySelector('#poster-title');
+var quoteText = document.querySelector('#poster-quote');
 
 // we've provided you with some data to work with 👇
 var images = [
