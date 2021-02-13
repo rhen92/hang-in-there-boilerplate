@@ -11,6 +11,10 @@ var nevermindButton = document.querySelector('.show-main');
 var showSavePosterButton = document.querySelector('.show-saved');
 var showSavedForm = document.querySelector('.saved-posters');
 var backToMainButton = document.querySelector('.back-to-main');
+var showMyPosterButton = document.querySelector('.make-poster');
+var imageURLText = document.querySelector('#poster-image-url');
+var titleText = document.querySelector('#poster-title');
+var quoteText = document.querySelector('#poster-quote');
 
 // we've provided you with some data to work with 👇
 var images = [
@@ -130,7 +134,9 @@ showSavePosterButton.addEventListener('click', function() {
 
 backToMainButton.addEventListener('click', function() {
   hideSideForm(showSavedForm);
-})
+});
+
+showMyPosterButton.addEventListener('click', showMyNewPoster);
 
 // functions and event handlers go here 👇
 function randomPoster() {
@@ -149,7 +155,14 @@ function hideSideForm(page) {
   page.classList.add('hidden');
   }
 
-// (we've provided one for you to get you started)!
-function getRandomIndex(array) {
-  return Math.floor(Math.random() * array.length);
-}
+  function showMyNewPoster() {
+    currentPoster = new Poster(imageURLText.value, titleText.value, quoteText.value);
+    titles.push(currentPoster.title);
+    quotes.push(currentPoster.quote);
+    images.push(currentPoster.imageURL);
+    titleName.innerText = titles[titles.length - 1];
+    quotation.innerText = quotes[quotes.length - 1];
+    image.src = images[images.length - 1];
+    event.preventDefault();
+    hideSideForm(makePosterForm);
+  }
