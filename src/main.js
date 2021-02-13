@@ -136,6 +136,8 @@ backToMainButton.addEventListener('click', function() {
   hideSideForm(showSavedForm);
 });
 
+showMyPosterButton.addEventListener('click', showMyNewPoster);
+
 // functions and event handlers go here 👇
 function randomPoster() {
   image.src = images[Math.floor(Math.random() * images.length)];
