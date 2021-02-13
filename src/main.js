@@ -166,8 +166,3 @@ function hideSideForm(page) {
     event.preventDefault();
     hideSideForm(makePosterForm);
   }
-  
-// (we've provided one for you to get you started)!
-function getRandomIndex(array) {
-  return Math.floor(Math.random() * array.length);
-}
