@@ -155,6 +155,18 @@ function hideSideForm(page) {
   page.classList.add('hidden');
   }
 
+  function showMyNewPoster() {
+    currentPoster = new Poster(imageURLText.value, titleText.value, quoteText.value);
+    titles.push(currentPoster.title);
+    quotes.push(currentPoster.quote);
+    images.push(currentPoster.imageURL);
+    titleName.innerText = titles[titles.length - 1];
+    quotation.innerText = quotes[quotes.length - 1];
+    image.src = images[images.length - 1];
+    event.preventDefault();
+    hideSideForm(makePosterForm);
+  }
+  
 // (we've provided one for you to get you started)!
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
