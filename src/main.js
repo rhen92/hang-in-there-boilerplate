@@ -11,6 +11,7 @@ var nevermindButton = document.querySelector('.show-main');
 var showSavePosterButton = document.querySelector('.show-saved');
 var showSavedForm = document.querySelector('.saved-posters');
 var backToMainButton = document.querySelector('.back-to-main');
+var showMyPosterButton = document.querySelector('.make-poster');
 
 // we've provided you with some data to work with 👇
 var images = [
@@ -130,7 +131,7 @@ showSavePosterButton.addEventListener('click', function() {
 
 backToMainButton.addEventListener('click', function() {
   hideSideForm(showSavedForm);
-})
+});
 
 // functions and event handlers go here 👇
 function randomPoster() {
