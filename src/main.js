@@ -142,6 +142,8 @@ showMyPosterButton.addEventListener('click', showMyNewPoster);
 
 saveThisPoster.addEventListener('click', saveCreatedPoster);
 
+grid.addEventListener('dblclick', deletePoster);
+
 // functions and event handlers go here 👇
 function randomPoster() {
   image.src = images[Math.floor(Math.random() * images.length)];
@@ -176,10 +178,14 @@ function saveCreatedPoster() {
   if (!savedPosters.includes(currentPoster)) {
    savedPosters.push(currentPoster);
    grid.innerHTML +=
-   `<article class="mini-poster">
+   `<article class="mini-poster" id="${currentPoster.id}">
    <img class="poster-img" src=${currentPoster.imageURL}>
    <h1 class="poster-title">${currentPoster.title}</h1>
    <h3 class="poster-quote">${currentPoster.quote}</h3>
    </article>`;
-   }
+  }
+}
+
+function deletePoster() {
+  event.target.remove();
 }
