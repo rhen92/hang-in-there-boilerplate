@@ -16,6 +16,7 @@ var imageURLText = document.querySelector('#poster-image-url');
 var titleText = document.querySelector('#poster-title');
 var quoteText = document.querySelector('#poster-quote');
 var saveThisPoster = document.querySelector('.save-poster');
+var grid = document.querySelector('.saved-posters-grid');
 
 // we've provided you with some data to work with 👇
 var images = [
