@@ -147,6 +147,7 @@ function randomPoster() {
   image.src = images[Math.floor(Math.random() * images.length)];
   quotation.innerText = quotes[Math.floor(Math.random() * quotes.length)];
   titleName.innerText = titles[Math.floor(Math.random() * titles.length)];
+  currentPoster = new Poster(image.src, titleName.innerText, quotation.innerText);
 }
 
 function hideMainForm(page) {
