@@ -15,6 +15,7 @@ var showMyPosterButton = document.querySelector('.make-poster');
 var imageURLText = document.querySelector('#poster-image-url');
 var titleText = document.querySelector('#poster-title');
 var quoteText = document.querySelector('#poster-quote');
+var saveThisPoster = document.querySelector('.save-poster');
 
 // we've provided you with some data to work with 👇
 var images = [
@@ -148,21 +149,21 @@ function randomPoster() {
 function hideMainForm(page) {
   page.classList.remove('hidden');
   mainPage.classList.add('hidden');
-  }
+}
 
 function hideSideForm(page) {
   mainPage.classList.remove('hidden');
   page.classList.add('hidden');
-  }
+}
 
-  function showMyNewPoster() {
-    currentPoster = new Poster(imageURLText.value, titleText.value, quoteText.value);
-    titles.push(currentPoster.title);
-    quotes.push(currentPoster.quote);
-    images.push(currentPoster.imageURL);
-    titleName.innerText = titles[titles.length - 1];
-    quotation.innerText = quotes[quotes.length - 1];
-    image.src = images[images.length - 1];
-    event.preventDefault();
-    hideSideForm(makePosterForm);
-  }
+function showMyNewPoster() {
+  currentPoster = new Poster(imageURLText.value, titleText.value, quoteText.value);
+  titles.push(currentPoster.title);
+  quotes.push(currentPoster.quote);
+  images.push(currentPoster.imageURL);
+  titleName.innerText = titles[titles.length - 1];
+  quotation.innerText = quotes[quotes.length - 1];
+  image.src = images[images.length - 1];
+  event.preventDefault();
+  hideSideForm(makePosterForm);
+}
