@@ -15,6 +15,8 @@ var showMyPosterButton = document.querySelector('.make-poster');
 var imageURLText = document.querySelector('#poster-image-url');
 var titleText = document.querySelector('#poster-title');
 var quoteText = document.querySelector('#poster-quote');
+var saveThisPoster = document.querySelector('.save-poster');
+var grid = document.querySelector('.saved-posters-grid');
 
 // we've provided you with some data to work with 👇
 var images = [
@@ -138,31 +140,46 @@ backToMainButton.addEventListener('click', function() {
 
 showMyPosterButton.addEventListener('click', showMyNewPoster);
 
+saveThisPoster.addEventListener('click', saveCreatedPoster);
+
 // functions and event handlers go here 👇
 function randomPoster() {
   image.src = images[Math.floor(Math.random() * images.length)];
   quotation.innerText = quotes[Math.floor(Math.random() * quotes.length)];
   titleName.innerText = titles[Math.floor(Math.random() * titles.length)];
+  currentPoster = new Poster(image.src, titleName.innerText, quotation.innerText);
 }
 
 function hideMainForm(page) {
   page.classList.remove('hidden');
   mainPage.classList.add('hidden');
-  }
+}
 
 function hideSideForm(page) {
   mainPage.classList.remove('hidden');
   page.classList.add('hidden');
-  }
+}
 
-  function showMyNewPoster() {
-    currentPoster = new Poster(imageURLText.value, titleText.value, quoteText.value);
-    titles.push(currentPoster.title);
-    quotes.push(currentPoster.quote);
-    images.push(currentPoster.imageURL);
-    titleName.innerText = titles[titles.length - 1];
-    quotation.innerText = quotes[quotes.length - 1];
-    image.src = images[images.length - 1];
-    event.preventDefault();
-    hideSideForm(makePosterForm);
-  }
+function showMyNewPoster() {
+  currentPoster = new Poster(imageURLText.value, titleText.value, quoteText.value);
+  titles.push(currentPoster.title);
+  quotes.push(currentPoster.quote);
+  images.push(currentPoster.imageURL);
+  titleName.innerText = titles[titles.length - 1];
+  quotation.innerText = quotes[quotes.length - 1];
+  image.src = images[images.length - 1];
+  event.preventDefault();
+  hideSideForm(makePosterForm);
+}
+
+function saveCreatedPoster() {
+  if (!savedPosters.includes(currentPoster)) {
+   savedPosters.push(currentPoster);
+   grid.innerHTML +=
+   `<article class="mini-poster">
+   <img class="poster-img" src=${currentPoster.imageURL}>
+   <h1 class="poster-title">${currentPoster.title}</h1>
+   <h3 class="poster-quote">${currentPoster.quote}</h3>
+   </article>`;
+   }
+}
