@@ -18,8 +18,6 @@ var quoteText = document.querySelector('#poster-quote');
 var saveThisPoster = document.querySelector('.save-poster');
 var grid = document.querySelector('.saved-posters-grid');
 
-var createdPoster = document.querySelector('.mini-poster');
-console.log('created poster: ', createdPoster);
 // we've provided you with some data to work with 👇
 var images = [
   "./assets/bees.jpg",
@@ -144,13 +142,7 @@ showMyPosterButton.addEventListener('click', showMyNewPoster);
 
 saveThisPoster.addEventListener('click', saveCreatedPoster);
 
-// createdPoster.addEventListener('dblclick', function() {
-//   savedPosters.splice(createdPoster, 1);
-// });
-
-createdPoster.addEventListener('dblclick', function() {
-  createdPoster.classList.add('delete');
-});
+grid.addEventListener('dblclick', deletePoster);
 
 // functions and event handlers go here 👇
 function randomPoster() {
@@ -191,13 +183,9 @@ function saveCreatedPoster() {
    <h1 class="poster-title">${currentPoster.title}</h1>
    <h3 class="poster-quote">${currentPoster.quote}</h3>
    </article>`;
-   }
+  }
 }
 
-// function findPosterForDeletion() {
-//   for (var i = 0; i < saved.length; i++)
-//   if (createdPosters.includes(currentPoster[i].id) {
-//     createdPosters[i].splice(i, 1)
-//
-//   }
-// }
+function deletePoster() {
+  event.target.remove();
+}
