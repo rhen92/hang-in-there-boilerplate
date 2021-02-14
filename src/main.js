@@ -173,14 +173,13 @@ function showMyNewPoster() {
 }
 
 function saveCreatedPoster() {
-  console.log(savedPosters.includes(currentPoster));
-    if (!savedPosters.includes(currentPoster)) {
-      savedPosters.push(currentPoster);
-      grid.innerHTML +=
-       `<article class="mini-poster">
-       <img class="poster-img" src=${currentPoster.imageURL}>
-       <h1 class="poster-title">${currentPoster.title}</h1>
-       <h3 class="poster-quote">${currentPoster.quote}</h3>
-       </article>`
+  if (!savedPosters.includes(currentPoster)) {
+   savedPosters.push(currentPoster);
+   grid.innerHTML +=
+   `<article class="mini-poster">
+   <img class="poster-img" src=${currentPoster.imageURL}>
+   <h1 class="poster-title">${currentPoster.title}</h1>
+   <h3 class="poster-quote">${currentPoster.quote}</h3>
+   </article>`;
    }
 }
