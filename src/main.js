@@ -140,6 +140,8 @@ backToMainButton.addEventListener('click', function() {
 
 showMyPosterButton.addEventListener('click', showMyNewPoster);
 
+saveThisPoster.addEventListener('click', saveCreatedPoster);
+
 // functions and event handlers go here 👇
 function randomPoster() {
   image.src = images[Math.floor(Math.random() * images.length)];
